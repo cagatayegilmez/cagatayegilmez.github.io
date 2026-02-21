@@ -37,7 +37,7 @@ python3 -m http.server 8080   # open http://localhost:8080
 ---
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230A66C2.svg?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/cagatay-egilmez/)
-[![Portfolio](https://img.shields.io/badge/Portfolio-%23000000.svg?style=flat&logo=safari&logoColor=white)](https://github.com/cagatayegilmez)
+[![Portfolio](https://img.shields.io/badge/Portfolio-%23000000.svg?style=flat&logo=safari&logoColor=white)](https://cagatayegilmez.github.io/)
 [![Email](https://img.shields.io/badge/Email-%23EA4335.svg?style=flat&logo=gmail&logoColor=white)](mailto:cagatayegilmez08@gmail.com)
 
 </div>
