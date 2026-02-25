@@ -35,6 +35,17 @@ const PROJECTS = [
       "Combine publishers for reactive state + async/await for I/O",
       "Demonstrates migration path from Combine to Concurrency"
     ]
+  },
+  {
+    name: "ViperChallange",
+    description: "SwiftUI + UIKit hybrid project using only Concurrency in a single VIPER architecture without coupling.",
+    tags: ["iOS", "SwiftUI", "UIKit", "Concurrency", "VIPER"],
+    links: { github: "https://github.com/cagatayegilmez/ViperChallange", caseStudy: null },
+    highlights: [
+      "VIPER with seamless UIKit ↔ SwiftUI boundary bridging",
+      "TaskGroup-based parallel network fetching with cancellation",
+      "Zero Combine dependency — pure async/await throughout"
+    ]
   }
 ];
 
