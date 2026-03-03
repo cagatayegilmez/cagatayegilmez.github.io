@@ -46,6 +46,17 @@ const PROJECTS = [
       "TaskGroup-based parallel network fetching with cancellation",
       "Zero Combine dependency — pure async/await throughout"
     ]
+  },
+  {
+    name: "AIDetector",
+    description: "On-device AI generated image detector for iOS. No server, no data upload via Core ML and Vision Framework.",
+    tags: ["iOS", "Swift", "Core ML", "SwiftUI", "On-Device ML"],
+    links: { github: "https://github.com/cagatayegilmez/AIDetector", caseStudy: null },
+    highlights: [
+      "100% on-device inference, zero server cost, zero data exposure",
+      "HuggingFace Swin Transformer converted to Core ML via torch.export",
+      "Detects AI generated images with confidence scoring"
+    ]
   }
 ];
 
