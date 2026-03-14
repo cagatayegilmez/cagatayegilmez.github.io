@@ -4,11 +4,6 @@
 
 Vanilla HTML/CSS/JS. No build step. No dependencies. → [cagatayegilmez.github.io](https://cagatayegilmez.github.io)
 
-### Local preview
-```bash
-python3 -m http.server 8080   # open http://localhost:8080
-```
-
 ### Editing content
 
 | What | Where |
