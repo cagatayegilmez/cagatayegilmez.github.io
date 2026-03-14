@@ -19,6 +19,90 @@ python3 -m http.server 8080   # open http://localhost:8080
 | Writing links | `index.html` → `#writing` |
 | Email / socials | `index.html` → `#contact` |
 | Colours | `css/styles.css` → `:root` vars |
+| Visitor tracking config | `js/visitor-tracker.js` → top 3 constants |
+
+---
+
+## Visitor Tracking Setup
+
+Every time someone opens the portfolio a notification email is sent to `cagatayegilmez08@gmail.com` with browser/device/geo details. The system uses **EmailJS** — a free service that works on any static site (no backend needed).
+
+### One-time setup (~5 minutes)
+
+#### 1 — Create a free EmailJS account
+Go to [https://www.emailjs.com](https://www.emailjs.com) → **Sign Up** (free tier = 200 emails/month).
+
+#### 2 — Connect Gmail
+Dashboard → **Email Services** → **Add New Service** → select **Gmail** → authenticate with `cagatayegilmez08@gmail.com` → **Create Service**.
+
+Copy the **Service ID** (looks like `service_xxxxxxx`).
+
+#### 3 — Create an email template
+Dashboard → **Email Templates** → **Create New Template**.
+
+Fill in:
+
+| Field | Value |
+|---|---|
+| **To email** | `cagatayegilmez08@gmail.com` |
+| **Subject** | `Portfolio visit — {{browser}} on {{os}} · {{country}}` |
+| **Body (HTML)** | Paste the block below |
+
+```html
+<h2>New portfolio visit</h2>
+<table>
+  <tr><td><b>Time</b></td><td>{{visit_time}}</td></tr>
+  <tr><td><b>Timezone</b></td><td>{{timezone}}</td></tr>
+  <tr><td><b>Browser</b></td><td>{{browser}}</td></tr>
+  <tr><td><b>OS</b></td><td>{{os}}</td></tr>
+  <tr><td><b>Device</b></td><td>{{device}}</td></tr>
+  <tr><td><b>Language</b></td><td>{{language}}</td></tr>
+  <tr><td><b>Screen</b></td><td>{{screen}}</td></tr>
+  <tr><td><b>Viewport</b></td><td>{{viewport}}</td></tr>
+  <tr><td><b>IP</b></td><td>{{ip}}</td></tr>
+  <tr><td><b>City</b></td><td>{{city}}</td></tr>
+  <tr><td><b>Region</b></td><td>{{region}}</td></tr>
+  <tr><td><b>Country</b></td><td>{{country}}</td></tr>
+  <tr><td><b>ISP</b></td><td>{{isp}}</td></tr>
+  <tr><td><b>Referrer</b></td><td>{{referrer}}</td></tr>
+  <tr><td><b>Page</b></td><td>{{page}}</td></tr>
+  <tr><td><b>User-Agent</b></td><td>{{user_agent}}</td></tr>
+</table>
+```
+
+Click **Save**. Copy the **Template ID** (looks like `template_xxxxxxx`).
+
+#### 4 — Get your Public Key
+Dashboard → **Account** → **General** → copy **Public Key**.
+
+#### 5 — Update the config in the tracker
+Open `js/visitor-tracker.js` and replace the three placeholders at the top of the file:
+
+```js
+const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // ← paste here
+const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // ← paste here
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // ← paste here
+```
+
+Commit & push → the tracker goes live immediately on GitHub Pages.
+
+#### 6 — Restrict the key to your domain (recommended)
+Dashboard → **Account** → **Security** → add `cagatayegilmez.github.io` to **Allowed Origins**.
+This prevents other sites from using your quota.
+
+### What is tracked (and why it's legal)
+The tracker collects standard browser metadata that is sent freely with every HTTP request:
+
+| Data point | Source |
+|---|---|
+| Browser name / OS | `navigator.userAgent` |
+| Screen & viewport size | `screen.*`, `window.inner*` |
+| Language | `navigator.language` |
+| Timezone | `Intl.DateTimeFormat` |
+| Referrer / page URL | `document.referrer`, `location.href` |
+| IP, city, country, ISP | `ipapi.co` free public API |
+
+Under Turkish law (KVKK) and EU GDPR, collecting this data for a personal portfolio under **legitimate interest** is generally permissible without a consent banner, provided you don't share or sell the data.
 
 ---
 
