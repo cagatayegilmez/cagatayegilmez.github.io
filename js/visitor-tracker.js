@@ -1,36 +1,21 @@
-/**
- * Visitor Tracker
- * ---------------
- * Collects anonymous browser/device metadata on each unique session visit
- * and sends a notification email via EmailJS.
- *
- * SETUP REQUIRED — see README.md § Visitor Tracking Setup
- */
 
 (function () {
   'use strict';
 
-  // ─── CONFIG ────────────────────────────────────────────────────────────────
-  // Replace these three values after completing the EmailJS setup (see README).
-  const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // e.g. 'abc123XYZ'
-  const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // e.g. 'service_xxxxxxx'
-  const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // e.g. 'template_xxxxxxx'
-  // ───────────────────────────────────────────────────────────────────────────
+  const EMAILJS_PUBLIC_KEY  = '1L_ZgbyHWUcnf4zTo';
+  const EMAILJS_SERVICE_ID  = 'service_mi15fta';   
+  const EMAILJS_TEMPLATE_ID = 'template_p3douhs';
 
-  // Skip tracking if config is not filled in yet.
   if (
-    EMAILJS_PUBLIC_KEY  === 'YOUR_PUBLIC_KEY' ||
-    EMAILJS_SERVICE_ID  === 'YOUR_SERVICE_ID' ||
-    EMAILJS_TEMPLATE_ID === 'YOUR_TEMPLATE_ID'
+    EMAILJS_PUBLIC_KEY  === '1L_ZgbyHWUcnf4zTo' ||
+    EMAILJS_SERVICE_ID  === 'service_mi15fta' ||
+    EMAILJS_TEMPLATE_ID === 'template_p3douhs'
   ) {
     console.warn('[Tracker] EmailJS config not set — tracking disabled.');
     return;
   }
 
-  // One email per browser session (prevents floods on refresh).
   if (sessionStorage.getItem('vt_sent')) return;
-
-  // ─── HELPERS ───────────────────────────────────────────────────────────────
 
   function parseBrowser(ua) {
     if (/SamsungBrowser/i.test(ua)) return 'Samsung Browser';
@@ -72,8 +57,6 @@
     return null;
   }
 
-  // ─── MAIN ──────────────────────────────────────────────────────────────────
-
   async function trackVisit() {
     const ua   = navigator.userAgent;
     const now  = new Date();
@@ -112,8 +95,6 @@
       console.error('[Tracker] Failed to send visit notification:', err);
     }
   }
-
-  // ─── LOAD EMAILJS SDK ──────────────────────────────────────────────────────
 
   const sdkScript  = document.createElement('script');
   sdkScript.src    = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
