@@ -90,7 +90,7 @@ async function runTypewriter() {
     { kind: "cmd", text: "whoami" },
     { kind: "out", text: "Senior iOS Developer · 9+ yrs · Bakırköy / İstanbul" },
     { kind: "cmd", text: "cat highlights.txt" },
-    { kind: "out", text: "9 yrs shipping  ·  14M+ users  ·  5 companies  ·  0 security incidents" }
+    { kind: "out", text: "9 yrs shipping  ·  14M+ users  ·  6 companies  ·  0 security incidents" }
   ];
 
   body.innerHTML = "";
