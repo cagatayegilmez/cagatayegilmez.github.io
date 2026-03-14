@@ -19,6 +19,7 @@ python3 -m http.server 8080   # open http://localhost:8080
 | Writing links | `index.html` → `#writing` |
 | Email / socials | `index.html` → `#contact` |
 | Colours | `css/styles.css` → `:root` vars |
+| Visitor tracking config | `js/visitor-tracker.js` → top 3 constants |
 
 ---
 
@@ -175,58 +176,3 @@ The fastest way to reach me is [email](mailto:cagatayegilmez08@gmail.com). I'm o
 *"Correctness first. Performance second. Everything else is negotiable."*
 
 </div>
-
-<!--
-==========================================================================
-HOW TO UPDATE THIS README — PLACEHOLDER CHECKLIST
-==========================================================================
-
-PERSONAL LINKS (search for these strings and replace):
-  [ ] YOUR_LINKEDIN_HANDLE      → your LinkedIn profile slug
-  [ ] YOUR_EMAIL@example.com    → your actual email address
-  [ ] YOUR_PORTFOLIO_SITE       → your portfolio or personal site URL
-
-PROJECTS:
-  [ ] PROJECT_A_REPO            → repo name for Project Slot A
-  [ ] PROJECT_B_REPO            → repo name for Project Slot B
-  [ ] SHORT_DESCRIPTION_A/B     → one-line description for each project
-
-EXPERIENCE:
-  [ ] [Company A/B/C]           → real company names
-  [ ] [YEAR]–[YEAR]             → employment dates
-  [ ] Metric placeholders (X%, N+, Z ms) → real verified numbers
-
-WRITING:
-  [ ] Article Title A/B/C       → real article titles
-  [ ] YOUR_BLOG_OR_MEDIUM_LINK  → actual article URLs
-
-NOW SECTION:
-  [ ] [Month YEAR]              → current month and year
-
-ASSETS (place files in the /assets/ folder of this repo):
-  [ ] /assets/cover.png         → header cover image (1280×400px recommended)
-  [ ] /assets/pinguard-diagram.png → optional architecture diagram for PinGuard
-                                    (uncomment the img block in the PinGuard section)
-
-BADGES:
-  All shields.io badges use stable, parameter-based URLs — no external state.
-  If a badge breaks, replace it with a plain text label; nothing else will break.
-
-==========================================================================
--->
-<!--
-## Writing & Notes
-
-Articles on real-world iOS engineering — no shallow tutorials.
-
-1. **[Article Title A: e.g., "Taming Swift Concurrency in Large Codebases"](https://YOUR_BLOG_OR_MEDIUM_LINK)**
-   *A deep-dive into TaskGroup pitfalls, actor reentrancy, and cancellation patterns in production.*
-
-2. **[Article Title B: e.g., "SSL Pinning Without the Footguns"](https://YOUR_BLOG_OR_MEDIUM_LINK)**
-   *Why most iOS pinning implementations fail under rotation and how to fix them.*
-
-3. **[Article Title C: e.g., "Modular iOS at Scale: What Actually Matters"](https://YOUR_BLOG_OR_MEDIUM_LINK)**
-   *A practical guide to feature modules, dependency graphs, and avoiding circular imports.*
-
----
--->
